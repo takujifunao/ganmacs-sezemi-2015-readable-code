@@ -24,8 +24,9 @@ $ ruby lib/recipe.rb src/recipes.yml
 ### spec8
 
 ```
-$ ruby lib/recipe.rb src/recipes.yml #ID #USERNAME
+$ ruby lib/recipe.rb src/recipes.yml #ID name:#USERNAME
 ```
+user名の前には、`name:`を入力
 
 
 #### recipe format

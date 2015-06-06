@@ -12,6 +12,7 @@ class Recipe
       "ユーザー名: #{recipe_user}\n
       #{ARGV[1]}: #{recipe_by_id(recipe_id)}"
     else
+      puts "ユーザー名: #{ARGV[1].split(":")[1]}\n"
       recipes.map.with_index(1) { |recipe, i| "#{i}: #{recipe}" }
     end
   end
@@ -35,7 +36,7 @@ class Recipe
   end
 
   def recipe_user
-    ARGV[2]
+    user_name = ARGV[2].split(":")[1]
   end
 
   def valid_recipe_id?
@@ -43,11 +44,14 @@ class Recipe
   end
 
   def exist_recipe_id?
+    if ARGV[1] =~ /name:/
+      return false
+    end
     !!ARGV[1]
   end
 
   def load_recipe_file
-    YAML.load_file(recipe_file_path) if exist_recipe_file?
+    YAML.load_file(recipe_file_path) if  exist_recipe_file?
   end
 
   def exist_recipe_file?
