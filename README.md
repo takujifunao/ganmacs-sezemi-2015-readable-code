@@ -21,6 +21,13 @@ $ ruby lib/recipe.rb src/recipes.yml
 $ ruby lib/recipe.rb src/recipes.yml
 ```
 
+### spec8
+
+```
+$ ruby lib/recipe.rb src/recipes.yml #ID #USERNAME
+```
+
+
 #### recipe format
 
 * use `.yaml` or `.yml`

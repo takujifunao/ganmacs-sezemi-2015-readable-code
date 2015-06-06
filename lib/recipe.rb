@@ -9,7 +9,8 @@ class Recipe
 
   def all_with_id
     if exist_recipe_id?
-      "#{ARGV[1]}: #{recipe_by_id(recipe_id)}"
+      "ユーザー名: #{recipe_user}\n
+      #{ARGV[1]}: #{recipe_by_id(recipe_id)}"
     else
       recipes.map.with_index(1) { |recipe, i| "#{i}: #{recipe}" }
     end
@@ -31,6 +32,10 @@ class Recipe
 
   def recipe_id
     ARGV[1].to_i - 1 if valid_recipe_id?
+  end
+
+  def recipe_user
+    ARGV[2]
   end
 
   def valid_recipe_id?
